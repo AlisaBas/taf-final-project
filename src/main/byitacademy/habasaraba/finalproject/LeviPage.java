@@ -13,6 +13,8 @@ public class LeviPage {
     public static final String PASSWORD_VALID="0505alisa";
     public static final String LOGIN_BTN="//*[@id=\"app\"]/div/div[2]/div[2]/div/div/div/div/div[2]/div/section/div[2]/form/div[5]/button";
     public static final String HELLO_USER="//*[@id=\"greeting-link-dropdown\"]";
+    public static final String ERR_MSG_PASSWORD="//*[@id=\"app\"]/div/div[2]/div[2]/div/div/div/div/div[2]/div/section/div[2]/form/div[2]/div[2]/div";
+    public static final String ERR_MSG_EMAIL="//*[@id=\"app\"]/div/div[2]/div[2]/div/div/div/div/div[2]/div/section/div[2]/form/div[2]/div";
 
 
 }
