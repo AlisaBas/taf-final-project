@@ -33,6 +33,11 @@ public class LeviTest {
     public void LogInWithIncorrectEmail(){
         Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", LeviPage.LoginWithIncorrectEmail());
     }
+
+    @Test
+    public void AddItemToTheBasket(){
+        Assertions.assertEquals("33W X 34L", LeviPage.AddItemToTheBasket());
+    }
 }
 
 
