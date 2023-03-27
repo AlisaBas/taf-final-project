@@ -104,9 +104,9 @@ public class Step {
         WebElement CartIconHeader= driver.findElement(By.xpath(LeviPage.CART_ICON_HEADER));
         CartIconHeader.click();
         Util.waitFor(10);
-        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEM_PRICE));
+        WebElement ItemPrice=driver.findElement(By.xpath(LeviPage.ITEM_PRICE));
         Util.waitFor(10);
-        return ItemQuality.getText();
+        return ItemPrice.getText();
     }
 
     public String ChangeBasket() {
@@ -154,9 +154,9 @@ public class Step {
         Driver.waitForPresenceElementByXPath(driver,LeviPage.BTN_QUANTITY,5);
         BtnQuantity.click();
         Util.waitFor(10);
-        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEMS_PRICE));
+        WebElement ItemsPrice=driver.findElement(By.xpath(LeviPage.ITEMS_PRICE));
         Util.waitFor(10);
-        return ItemQuality.getText();
+        return ItemsPrice.getText();
     }
 }
 
