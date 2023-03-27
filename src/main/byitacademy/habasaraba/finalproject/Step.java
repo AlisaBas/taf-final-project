@@ -104,7 +104,57 @@ public class Step {
         WebElement CartIconHeader= driver.findElement(By.xpath(LeviPage.CART_ICON_HEADER));
         CartIconHeader.click();
         Util.waitFor(10);
-        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEM_QUALITY_CART));
+        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEM_PRICE));
+        Util.waitFor(10);
+        return ItemQuality.getText();
+    }
+
+    public String ChangeBasket() {
+        Util.waitFor(5);
+        WebElement OfferBtn = driver.findElement(By.xpath(byitacademy.habasaraba.finalproject.LeviPage.OFFER_BTN));
+        OfferBtn.click();
+        WebElement MenuBtnShop = driver.findElement(By.xpath(LeviPage.MENU_BTN_SHOP));
+        Driver.waitForPresenceElementByXPath(driver, LeviPage.MENU_BTN_SHOP, 10);
+        MenuBtnShop.click();
+        Util.waitFor(5);
+        WebElement SideMenuBtnMen = driver.findElement(By.xpath(LeviPage.SIDE_MENU_BTN_MEN));
+        Driver.waitForPresenceElementByXPath(driver, LeviPage.SIDE_MENU_BTN_MEN, 10);
+        SideMenuBtnMen.click();
+        Util.waitFor(5);
+        WebElement SideMenuLinkJeans = driver.findElement(By.xpath(LeviPage.SIDE_MENU_LINK_JEANS));
+        Driver.waitForPresenceElementByXPath(driver, LeviPage.SIDE_MENU_LINK_JEANS, 10);
+        SideMenuLinkJeans.click();
+        Util.waitFor(5);
+        WebElement ItemLink=driver.findElement(By.xpath(LeviPage.ITEM_LINK));
+        ItemLink.click();
+        Util.waitFor(10);
+        Actions actions=new Actions(driver);
+        Util.waitFor(5);
+        WebElement target=driver.findElement(By.xpath(LeviPage.ITEM_COLOR_CHECKBOX));
+        actions.moveToElement(target).perform();
+        WebElement ItemColor=driver.findElement(By.xpath(LeviPage.ITEM_COLOR_CHECKBOX));
+        ItemColor.click();
+        Util.waitFor(5);
+        WebElement ItemWaist= driver.findElement(By.xpath(LeviPage.ITEM_WAIST_CHECKBOX));
+        ItemWaist.click();
+        Util.waitFor(5);
+        WebElement ItemLength=driver.findElement(By.xpath(LeviPage.ITEM_LENGTH_CHECKBOX));
+        ItemLength.click();
+        Util.waitFor(5);
+        WebElement AddToCartBtn= driver.findElement(By.xpath(LeviPage.ADD_TO_CART_BTN));
+        AddToCartBtn.click();
+        Util.waitFor(10);
+        WebElement CartIconHeader= driver.findElement(By.xpath(LeviPage.CART_ICON_HEADER));
+        CartIconHeader.click();
+        Util.waitFor(10);
+        WebElement FilterQuantity=driver.findElement(By.xpath(LeviPage.FILTER_QUANTITY));
+        Driver.waitForPresenceElementByXPath(driver,LeviPage.FILTER_QUANTITY,5);
+        FilterQuantity.click();
+        WebElement BtnQuantity=driver.findElement(By.xpath(LeviPage.BTN_QUANTITY));
+        Driver.waitForPresenceElementByXPath(driver,LeviPage.BTN_QUANTITY,5);
+        BtnQuantity.click();
+        Util.waitFor(10);
+        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEMS_PRICE));
         Util.waitFor(10);
         return ItemQuality.getText();
     }

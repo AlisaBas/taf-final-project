@@ -24,8 +24,10 @@ public class LeviPage {
     public static final String ITEM_LENGTH_CHECKBOX="//*[@id=\"app\"]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[6]/div/div/div/div/div[2]/ul/li[4]/button/span";
     public static final String ADD_TO_CART_BTN="//*[@id=\"app\"]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[12]/div[1]/button";
     public static final String CART_ICON_HEADER="//*[@id=\"header-bar-nav-content\"]/ul/li[5]/a";
-    public static final String ITEM_QUALITY_CART="//*[@id=\"00501011403334\"]/div[2]/div[2]/div[2]/div[2]/div/span[2]";
-    public static final String ITEM_QUANTITY_CART="//*[@id=\"app\"]/div/div[2]/div[1]/div/div[1]/div[1]/div[2]/div[2]";
+    public static final String ITEM_PRICE="//*[@id=\"00501011403334\"]/div[2]/div[2]/div[2]/div[2]/div/span[2]";
+    public static final String FILTER_QUANTITY="//*[@id=\"sort\"]";
+    public static final String BTN_QUANTITY="//*[@id=\"qty-options\"]/li[2]/button";
+    public static final String ITEMS_PRICE="//*[@id=\"00501011403334\"]/div[2]/div[2]/div[2]/div[2]/div/span[2]";
 
 
 

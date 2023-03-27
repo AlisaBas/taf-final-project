@@ -38,6 +38,11 @@ public class LeviTest {
     public void AddItemToTheBasket(){
         Assertions.assertEquals("$98.00", LeviPage.AddItemToTheBasket());
     }
+
+    @Test
+    public void ChangeBasket(){
+        Assertions.assertEquals("$137.20", LeviPage.ChangeBasket());
+    }
 }
 
 
