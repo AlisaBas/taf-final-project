@@ -3,6 +3,8 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
@@ -13,7 +15,10 @@ public class LeviTest {
 
     @BeforeEach
     public void warmUp() {
-        driver = new SafariDriver();
+        /*ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(chromeOptions);*/
+        driver=new SafariDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1));
         driver.get(byitacademy.habasaraba.finalproject.LeviPage.URL);
