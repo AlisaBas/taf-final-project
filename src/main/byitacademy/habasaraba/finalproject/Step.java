@@ -3,6 +3,7 @@ package byitacademy.habasaraba.finalproject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class Step {
     WebDriver driver;
@@ -81,22 +82,31 @@ public class Step {
         Driver.waitForPresenceElementByXPath(driver, LeviPage.SIDE_MENU_LINK_JEANS, 10);
         SideMenuLinkJeans.click();
         Util.waitFor(5);
-        WebElement AddToBagBtn = driver.findElement(By.xpath(LeviPage.ADD_TO_BAG_BTN));
-        AddToBagBtn.click();
+        WebElement ItemLink=driver.findElement(By.xpath(LeviPage.ITEM_LINK));
+        ItemLink.click();
+        Util.waitFor(10);
+        Actions actions=new Actions(driver);
         Util.waitFor(5);
-        WebElement FilterWaistCheckbox = driver.findElement(By.xpath(LeviPage.FILTER_WAIST_CHECKBOX));
-        Driver.waitForPresenceElementByXPath(driver, LeviPage.FILTER_WAIST_CHECKBOX, 10);
-        FilterWaistCheckbox.click();
-        WebElement FilterLengthCheckbox = driver.findElement(By.xpath(LeviPage.FILTER_LENGTH_CHECKBOX));
-        Driver.waitForPresenceElementByXPath(driver, LeviPage.FILTER_LENGTH_CHECKBOX, 10);
-        FilterLengthCheckbox.click();
-        WebElement AddToCartBtn = driver.findElement(By.xpath(LeviPage.ADD_TO_CART_BTN));
+        WebElement target=driver.findElement(By.xpath(LeviPage.ITEM_COLOR_CHECKBOX));
+        actions.moveToElement(target).perform();
+        WebElement ItemColor=driver.findElement(By.xpath(LeviPage.ITEM_COLOR_CHECKBOX));
+        ItemColor.click();
+        Util.waitFor(5);
+        WebElement ItemWaist= driver.findElement(By.xpath(LeviPage.ITEM_WAIST_CHECKBOX));
+        ItemWaist.click();
+        Util.waitFor(5);
+        WebElement ItemLength=driver.findElement(By.xpath(LeviPage.ITEM_LENGTH_CHECKBOX));
+        ItemLength.click();
+        Util.waitFor(5);
+        WebElement AddToCartBtn= driver.findElement(By.xpath(LeviPage.ADD_TO_CART_BTN));
         AddToCartBtn.click();
-        Util.waitFor(5);
-        WebElement CartIconHeader = driver.findElement(By.xpath(LeviPage.CART_ICON_HEADER));
+        Util.waitFor(10);
+        WebElement CartIconHeader= driver.findElement(By.xpath(LeviPage.CART_ICON_HEADER));
         CartIconHeader.click();
-        WebElement ItemQualityCart = driver.findElement(By.xpath(LeviPage.ITEM_QUALITY_CART));
-        return ItemQualityCart.getText();
+        Util.waitFor(10);
+        WebElement ItemQuality=driver.findElement(By.xpath(LeviPage.ITEM_QUALITY_CART));
+        Util.waitFor(10);
+        return ItemQuality.getText();
     }
 }
 

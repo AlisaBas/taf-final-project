@@ -36,7 +36,7 @@ public class LeviTest {
 
     @Test
     public void AddItemToTheBasket(){
-        Assertions.assertEquals("33W X 34L", LeviPage.AddItemToTheBasket());
+        Assertions.assertEquals("$98.00", LeviPage.AddItemToTheBasket());
     }
 }
 
