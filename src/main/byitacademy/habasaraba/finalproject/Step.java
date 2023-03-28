@@ -46,6 +46,22 @@ public class Step {
         WebElement ErrMsgPassword = driver.findElement(By.xpath(byitacademy.habasaraba.finalproject.LeviPage.ERR_MSG_PASSWORD));
         return ErrMsgPassword.getText();
     }
+    public String LoginWithoutEmail() {
+        Util.waitFor(5);
+        WebElement OfferBtn = driver.findElement(By.xpath(byitacademy.habasaraba.finalproject.LeviPage.OFFER_BTN));
+        OfferBtn.click();
+        WebElement LogInBtnHeader = driver.findElement(By.xpath(byitacademy.habasaraba.finalproject.LeviPage.LOGIN_BTN_HEADER));
+        Driver.waitForPresenceElementByXPath(driver, byitacademy.habasaraba.finalproject.LeviPage.LOGIN_BTN_HEADER, 10);
+        LogInBtnHeader.click();
+        Util.waitFor(5);
+        WebElement EmailInputField = driver.findElement(By.xpath(LeviPage.INPUT_PASSWORD));
+        EmailInputField.sendKeys("0505alisa");
+        WebElement LogInBtn = driver.findElement(By.xpath(byitacademy.habasaraba.finalproject.LeviPage.LOGIN_BTN));
+        LogInBtn.click();
+        WebElement ErrMsgPassword = driver.findElement(By.xpath(LeviPage.ERR_MSG_EMAIL));
+        return ErrMsgPassword.getText();
+    }
+
 
     public String LoginWithIncorrectEmail() {
         Util.waitFor(5);
