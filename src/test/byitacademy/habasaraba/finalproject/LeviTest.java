@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LeviTest {
     WebDriver driver;
-    Step LeviPage;
+    Step leviPage;
 
     @BeforeEach
     public void warmUp() {
@@ -23,43 +23,76 @@ public class LeviTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         /*driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3)):*/
         driver.get(HomePage.URL);
-        LeviPage = new Step(driver);
+        leviPage = new Step(driver);
     }
 
     @Test
-    public void LogInWithValidCredentials() {
-        Assertions.assertEquals("Hello, Hanna Basaraba", LeviPage.LogInWithValidCredentials());
+    public void loginWithValidCredentials(){
+
+        Assertions.assertEquals("Hello, Hanna Basaraba", leviPage.LoginWithValidCredentials());
+    }
+    @Test
+    public void loginWithoutPassword(){
+        Assertions.assertEquals("Please enter your password.", leviPage.LoginWithoutPassword());
+    }
+    @Test
+    public void loginWithoutEmail(){
+        Assertions.assertEquals("Password*Show Password Toggle", leviPage.LoginWithoutEmail());
+    }
+    @Test
+    public void loginWithIncorrectEmail(){
+        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectEmail());
+    }
+    @Test
+    public void loginWithIncorrectPassword(){
+        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectPassword());
     }
 
-    @Test
+    }
+
+
+
+
+
+
+  /*  @Test
     public void LogInWithoutPassword() {
-        Assertions.assertEquals("Please enter your password.", LeviPage.LoginWithoutPassword());
+        Assertions.assertEquals("Please enter your password.", leviPage.LoginWithoutPassword());
     }
 
     @Test
     public void LogInWithoutEmail() {
-        Assertions.assertEquals("Password*Show Password Toggle", LeviPage.LoginWithoutEmail());
+        Assertions.assertEquals("Password*Show Password Toggle", leviPage.LoginWithoutEmail());
     }
 
     @Test
     public void LogInWithIncorrectEmail() {
-        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", LeviPage.LoginWithIncorrectEmail());
+        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectEmail());
     }
     @Test
     public void LogInWithIncorrectPassword() {
-        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", LeviPage.LoginWithIncorrectPassword());
+        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectPassword());
     }
 
     @Test
     public void AddToCart() {
-        Assertions.assertEquals("$98.00", LeviPage.AddToCart());
+        Assertions.assertEquals("$98.00", leviPage.AddToCart());
     }
 
     @Test
     public void ChangeCart() {
-        Assertions.assertEquals("$137.20", LeviPage.ChangeCart());
+        Assertions.assertEquals("$137.20", leviPage.ChangeCart());
     }
-}
+
+
+
+    @Test
+    public void LogInWithValidCredentials() {
+        Assertions.assertEquals("Hello, Hanna Basaraba", leviPage.LogInWithValidCredentials());
+    }
+
+   */
+
 
 
 

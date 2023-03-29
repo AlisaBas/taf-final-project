@@ -16,28 +16,59 @@ public class Step {
         this.driver = driver;
     }
 
-
-
-    public String LogInWithValidCredentials() {
-        Driver.waitForPresenceElementByXPath(driver,HomePage.OFFER_BTN,5);
+    public void enterCredentials(String email, String password) {
+        Driver.waitForPresenceElementByXPath(driver, HomePage.OFFER_BTN, 5);
         WebElement OfferBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
         OfferBtn.click();
         WebElement LogInBtnHeader = driver.findElement(By.xpath(LogInPage.LOGIN_BTN_HEADER));
         Driver.waitForPresenceElementByXPath(driver, LogInPage.LOGIN_BTN_HEADER, 10);
         LogInBtnHeader.click();
-        Driver.waitForPresenceElementByXPath(driver,LogInPage.INPUT_EMAIL,5);
+        Driver.waitForPresenceElementByXPath(driver, LogInPage.INPUT_EMAIL, 5);
         WebElement EmailInputField = driver.findElement(By.xpath(LogInPage.INPUT_EMAIL));
-        EmailInputField.sendKeys(UserData.EMAIL_VALID);
+        EmailInputField.sendKeys(email);
         WebElement PasswordInputField = driver.findElement(By.xpath(LogInPage.INPUT_PASSWORD));
-        PasswordInputField.sendKeys(UserData.PASSWORD_VALID);
+        PasswordInputField.sendKeys(password);
         WebElement LogInBtn = driver.findElement(By.xpath(LogInPage.LOGIN_BTN));
         LogInBtn.click();
-        Driver.waitForPresenceElementByXPath(driver,LogInPage.HELLO_USER,5);
+    }
+
+    public String LoginWithValidCredentials() {
+        enterCredentials(UserData.EMAIL_VALID, UserData.PASSWORD_VALID);
+        Driver.waitForPresenceElementByXPath(driver, LogInPage.HELLO_USER, 5);
         WebElement helloUser = driver.findElement(By.xpath(LogInPage.HELLO_USER));
         return helloUser.getText();
     }
 
     public String LoginWithoutPassword() {
+        enterCredentials(UserData.EMAIL_VALID, "");
+        WebElement ErrMsgPassword = driver.findElement(By.xpath(LogInPage.ERR_MSG_PASSWORD));
+        return ErrMsgPassword.getText();
+    }
+
+    public String LoginWithoutEmail() {
+        enterCredentials("", UserData.PASSWORD_VALID);
+        WebElement ErrMsgEmail = driver.findElement(By.xpath(LogInPage.ERR_MSG_EMAIL));
+        return ErrMsgEmail.getText();
+    }
+
+    public String LoginWithIncorrectEmail() {
+        enterCredentials(UserData.EMAIL_INVALID, UserData.PASSWORD_VALID);
+        Driver.waitForPresenceElementByXPath(driver, LogInPage.ERR_MSG_EMAIL, 5);
+        WebElement ErrMsgEmail = driver.findElement(By.xpath(LogInPage.ERR_MSG_EMAIL));
+        return ErrMsgEmail.getText();
+    }
+    public String LoginWithIncorrectPassword(){
+        enterCredentials(UserData.EMAIL_VALID,UserData.PASSWORD_INVALID);
+        Driver.waitForPresenceElementByXPath(driver,LogInPage.ERR_MSG_EMAIL,5);
+        WebElement ErrMsgEmail = driver.findElement(By.xpath(LogInPage.ERR_MSG_EMAIL));
+        return ErrMsgEmail.getText();
+    }
+    }
+
+
+
+
+   /* public String LoginWithoutPassword() {
         Driver.waitForPresenceElementByXPath(driver,HomePage.OFFER_BTN,5);
         WebElement OfferBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
         OfferBtn.click();
@@ -197,7 +228,29 @@ public class Step {
         WebElement ItemsPrice=driver.findElement(By.xpath(CartPage.ITEMS_PRICE));
         return ItemsPrice.getText();
     }
-}
+    public String LogInWithValidCredentials() {
+        Driver.waitForPresenceElementByXPath(driver,HomePage.OFFER_BTN,5);
+        WebElement OfferBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
+        OfferBtn.click();
+        WebElement LogInBtnHeader = driver.findElement(By.xpath(LogInPage.LOGIN_BTN_HEADER));
+        Driver.waitForPresenceElementByXPath(driver, LogInPage.LOGIN_BTN_HEADER, 10);
+        LogInBtnHeader.click();
+        Driver.waitForPresenceElementByXPath(driver,LogInPage.INPUT_EMAIL,5);
+        WebElement EmailInputField = driver.findElement(By.xpath(LogInPage.INPUT_EMAIL));
+        EmailInputField.sendKeys(UserData.EMAIL_VALID);
+        WebElement PasswordInputField = driver.findElement(By.xpath(LogInPage.INPUT_PASSWORD));
+        PasswordInputField.sendKeys(UserData.PASSWORD_VALID);
+        WebElement LogInBtn = driver.findElement(By.xpath(LogInPage.LOGIN_BTN));
+        LogInBtn.click();
+        Driver.waitForPresenceElementByXPath(driver,LogInPage.HELLO_USER,5);
+        WebElement helloUser = driver.findElement(By.xpath(LogInPage.HELLO_USER));
+        return helloUser.getText();
+
+    */
+
+
+
+
 
 
 

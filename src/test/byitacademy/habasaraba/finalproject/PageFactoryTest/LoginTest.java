@@ -18,13 +18,13 @@ public class LoginTest {
     public static WebDriver driver;
 
     @BeforeEach
-    public static void setUp() {
+    public void setUp() {
         driver = new SafariDriver();
         logIn=new LogIn(driver);
         profile=new Profile(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(HomePage.URL);
+        driver.get(HomePage.URL);}
 
         @Test
         public void logInTest() {
@@ -36,4 +36,4 @@ public class LoginTest {
         Assertions.assertEquals(UserData.USER_DATA,user);
 
     }
-}}
+}
