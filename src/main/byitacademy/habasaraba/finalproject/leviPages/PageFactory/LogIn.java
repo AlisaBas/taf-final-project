@@ -1,4 +1,4 @@
-package byitacademy.habasaraba.finalproject.leviPages;
+package byitacademy.habasaraba.finalproject.leviPages.PageFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

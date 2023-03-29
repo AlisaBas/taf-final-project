@@ -1,9 +1,9 @@
-package byitacademy.habasaraba.finalproject;
+package byitacademy.habasaraba.finalproject.PageFactoryTest;
 
 import byitacademy.habasaraba.finalproject.data.UserData;
 import byitacademy.habasaraba.finalproject.leviPages.HomePage;
-import byitacademy.habasaraba.finalproject.leviPages.LogIn;
-import byitacademy.habasaraba.finalproject.leviPages.Profile;
+import byitacademy.habasaraba.finalproject.leviPages.PageFactory.LogIn;
+import byitacademy.habasaraba.finalproject.leviPages.PageFactory.Profile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
