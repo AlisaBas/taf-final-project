@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class LeviTest {
@@ -19,7 +20,8 @@ public class LeviTest {
         driver = new ChromeDriver(chromeOptions);*/
         driver = new SafariDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        /*driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3)):*/
         driver.get(HomePage.URL);
         LeviPage = new Step(driver);
     }
@@ -49,12 +51,12 @@ public class LeviTest {
     }
 
     @Test
-    public void AddItemToTheBasket() {
+    public void AddToCart() {
         Assertions.assertEquals("$98.00", LeviPage.AddToCart());
     }
 
     @Test
-    public void ChangeBasket() {
+    public void ChangeCart() {
         Assertions.assertEquals("$137.20", LeviPage.ChangeCart());
     }
 }
