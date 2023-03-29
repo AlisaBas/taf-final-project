@@ -34,7 +34,7 @@ public class LogIn {
         inputPassword.sendKeys(password);
     }
 
-    public void LoginBtn(){
+    public void clickLoginBtn(){
         loginBtn.click();
     }
 
