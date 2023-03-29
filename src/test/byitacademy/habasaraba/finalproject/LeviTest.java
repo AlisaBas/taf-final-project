@@ -1,11 +1,8 @@
 package byitacademy.habasaraba.finalproject;
 
+import byitacademy.habasaraba.finalproject.leviPages.HomePage;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
@@ -22,8 +19,8 @@ public class LeviTest {
         driver = new ChromeDriver(chromeOptions);*/
         driver = new SafariDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1));
-        driver.get(byitacademy.habasaraba.finalproject.LeviPage.URL);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3));
+        driver.get(HomePage.URL);
         LeviPage = new Step(driver);
     }
 
@@ -46,15 +43,19 @@ public class LeviTest {
     public void LogInWithIncorrectEmail() {
         Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", LeviPage.LoginWithIncorrectEmail());
     }
+    @Test
+    public void LogInWithIncorrectPassword() {
+        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", LeviPage.LoginWithIncorrectPassword());
+    }
 
     @Test
     public void AddItemToTheBasket() {
-        Assertions.assertEquals("$98.00", LeviPage.AddItemToTheBasket());
+        Assertions.assertEquals("$98.00", LeviPage.AddToCart());
     }
 
     @Test
     public void ChangeBasket() {
-        Assertions.assertEquals("$137.20", LeviPage.ChangeBasket());
+        Assertions.assertEquals("$137.20", LeviPage.ChangeCart());
     }
 }
 
