@@ -2,7 +2,7 @@ package byitacademy.habasaraba.finalproject.leviPages;
 
 public class CartPage {
     public static final String MENU_BTN_SHOP="//*[@id=\"headerBar\"]/div[2]/nav/div[1]/div/div[1]/div[2]/div/div[1]/li[1]/button";
-    public static final String SIDE_MENU_BTN_MEN="//*[@id=\"headerBar\"]/div[2]/nav/div[1]/div/div[1]/div[2]/div/div[2]/div[1]/div/div/nav/ul/li[3]";
+    public static final String SIDE_MENU_BTN_MEN="//*[@id=\"l2Item2\"]";
     public static final String SIDE_MENU_LINK_JEANS="//*[@id=\"l3Item2\"]";
     public static  final String ITEM_LINK="//*[@id=\"app\"]/div/div[2]/div[1]/div[3]/div/div/div[2]/div/div/div[2]/div/div[1]/a/div[2]/div[1]";
     public static final String  ITEM_COLOR_CHECKBOX="//*[@id=\"app\"]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div[3]/div/div/ul/li[1]/button/span/img";

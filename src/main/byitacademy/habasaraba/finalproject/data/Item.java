@@ -1,6 +1,13 @@
 package byitacademy.habasaraba.finalproject.data;
 
 public class Item {
-    private String Quanlity="33W X 34L";
-    private String Quantity="1 item";
+
+
+    public static final String QUANTITY="1 item";
+
+    public static final String ITEM_NAME= "Jeans";
+
+
+
+
 }
