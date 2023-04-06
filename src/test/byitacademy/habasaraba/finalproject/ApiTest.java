@@ -6,10 +6,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class ApiTest {
  @Test
-    public void testGetAllItems(){
-     String url="https://www.levi.com/US/en_US/";
+    public void testGetUrl(){
+     String url="https://www.levi.com/";
      when().get(url).
-             then().assertThat().statusCode(200);
+             then().statusCode(200);
  }
     @Test
     public void testGetMenJeans(){

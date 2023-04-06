@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 import static byitacademy.habasaraba.finalproject.leviPages.CartPage.SIDE_MENU_BTN_MEN;
+import static byitacademy.habasaraba.finalproject.leviPages.CartPage.SIDE_MENU_LINK_JEANS;
 
 public class Step {
     WebDriver driver;
@@ -81,9 +82,9 @@ public class Step {
         WebElement MenuBtnShop = driver.findElement(By.xpath(CartPage.MENU_BTN_SHOP));
         Driver.waitForPresenceElementByXPath(driver, CartPage.MENU_BTN_SHOP, 10);
         MenuBtnShop.click();
-        WebElement SideMenuBtn=driver.findElement(By.xpath(SIDE_MENU_BTN_MEN));
         Driver.waitForElementToBeVisibleByXPath(driver, SIDE_MENU_BTN_MEN,20);
-        Driver.waitForElementToBeClickable(driver, SIDE_MENU_BTN_MEN,20);
+        WebElement SideMenuBtn=driver.findElement(By.xpath(SIDE_MENU_BTN_MEN));
+        Driver.waitForPresenceElementByXPath(driver,SIDE_MENU_BTN_MEN,10);
         SideMenuBtn.click();
         Driver.waitForPresenceElementByXPath(driver,CartPage.SIDE_MENU_LINK_JEANS,10);
         WebElement SideMenuLinkJeans = driver.findElement(By.xpath(CartPage.SIDE_MENU_LINK_JEANS));

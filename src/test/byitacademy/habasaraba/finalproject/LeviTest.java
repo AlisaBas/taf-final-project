@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
+import javax.lang.model.element.Element;
 import java.security.Key;
 import java.time.Duration;
 import java.util.List;
@@ -82,10 +83,12 @@ public class LeviTest {
         }
         WebElement pagination = driver.findElement(By.xpath(SearchPage.BTN_PAGINATION_NEXT));
 
-
-       while (driver.findElements(By.xpath(SearchPage.BTN_PAGINATION_NEXT)).size() > 0) {
+       while (pagination.isDisplayed()) {
             pagination.click();
-            /*try {
+           /* while(driver.findElements(By.xpath(SearchPage.BTN_PAGINATION_NEXT)).size() > 0){
+           pagination.click();
+
+            try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -98,6 +101,7 @@ public class LeviTest {
                 Assert.isTrue(product.getText().toLowerCase().
                                 contains(Item.ITEM_NAME.toLowerCase()),
                         "Error. No " + Item.ITEM_NAME + " found.");
+
             }
         }
 
