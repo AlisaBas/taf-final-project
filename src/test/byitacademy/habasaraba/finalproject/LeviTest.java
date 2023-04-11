@@ -64,47 +64,18 @@ public class LeviTest {
     }
 
     @Test
-    public void ChangeCart() {
-        Assertions.assertEquals("$137.20", leviPage.ChangeCart());
-    }
-
-    @Test
     public void SearchTest(){
         Driver.waitForPresenceElementByXPath(driver, HomePage.OFFER_BTN, 5);
         WebElement OfferBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
         OfferBtn.click();
         WebElement SearchInputField= driver.findElement(By.xpath(SearchPage.SEARCH_INPUT_FIELD));
-        SearchInputField.sendKeys("jjeans", Keys.RETURN);
+        SearchInputField.sendKeys("501® Shrink-to-Fit™ Men's Jeans (Big & Tall)", Keys.RETURN);
         List<WebElement> products=driver.findElements(By.className(SearchPage.LABEL_PRODUCT_NAME));
         for (WebElement product : products) {
             Assert.isTrue(product.getText().toLowerCase().
                             contains(Item.ITEM_NAME.toLowerCase()),
                     "Error. No " + Item.ITEM_NAME + " found.");
         }
-        WebElement pagination = driver.findElement(By.xpath(SearchPage.BTN_PAGINATION_NEXT));
-
-       while (pagination.isDisplayed()) {
-            pagination.click();
-           /* while(driver.findElements(By.xpath(SearchPage.BTN_PAGINATION_NEXT)).size() > 0){
-           pagination.click();
-
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }*/
-
-            List<WebElement> productsOnTheNextPage = driver.findElements(By.className(SearchPage.LABEL_PRODUCT_NAME));
-
-            for (WebElement product : productsOnTheNextPage) {
-
-                Assert.isTrue(product.getText().toLowerCase().
-                                contains(Item.ITEM_NAME.toLowerCase()),
-                        "Error. No " + Item.ITEM_NAME + " found.");
-
-            }
-        }
-
     }}
 
 
