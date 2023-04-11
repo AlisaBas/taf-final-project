@@ -1,13 +1,14 @@
+www.levi.com
 Test automation framework written in Java.
 
-Framework contains UI and API tests of the https://breezy.by/ site.
+Framework contains UI and API tests of the https://www.levi.com/ website.
 
-UI blocks that have been tested:
+UI block contains:
 
-Login form (login with valid/invalid credentials, logout)
-Cart (adding/removing products to cart)
-Search (search product with filters, clean search bar)
-API blocks that have been tested:
+Login form (login with valid/invalid credentials)
+Cart (adding product to cart)
+Search (search product)
 
-Login with valid/invalid credentials
-Search product
+API block contains:
+
+GET
