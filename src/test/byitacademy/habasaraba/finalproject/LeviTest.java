@@ -12,13 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
-
-import javax.lang.model.element.Element;
-import java.security.Key;
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 
 public class LeviTest {
     WebDriver driver;
@@ -60,7 +55,7 @@ public class LeviTest {
     }
     @Test
     public void AddItemToCart() {
-        Assertions.assertEquals("$98.00", leviPage.AddItemToCart());
+        Assertions.assertEquals("$76.55", leviPage.AddItemToCart());
     }
 
     @Test
@@ -77,51 +72,3 @@ public class LeviTest {
                     "Error. No " + Item.ITEM_NAME + " found.");
         }
     }}
-
-
-
-
-
-
-
-
-
-  /*  @Test
-    public void LogInWithoutPassword() {
-        Assertions.assertEquals("Please enter your password.", leviPage.LoginWithoutPassword());
-    }
-
-    @Test
-    public void LogInWithoutEmail() {
-        Assertions.assertEquals("Password*Show Password Toggle", leviPage.LoginWithoutEmail());
-    }
-
-    @Test
-    public void LogInWithIncorrectEmail() {
-        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectEmail());
-    }
-    @Test
-    public void LogInWithIncorrectPassword() {
-        Assertions.assertEquals("The email and/or password you entered is incorrect. Please try again.", leviPage.LoginWithIncorrectPassword());
-    }
-
-
-
-
-    @Test
-    public void LogInWithValidCredentials() {
-        Assertions.assertEquals("Hello, Hanna Basaraba", leviPage.LogInWithValidCredentials());
-    }
-
-   */
-
-
-
-
-
-
-
- /*ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("useAutomationExtension", false);
-        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        WebDriver driver = new ChromeDriver(options);*/

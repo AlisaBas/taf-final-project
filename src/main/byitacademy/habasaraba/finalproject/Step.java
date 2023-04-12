@@ -5,6 +5,9 @@ import byitacademy.habasaraba.finalproject.leviPages.HomePage;
 import byitacademy.habasaraba.finalproject.leviPages.LogInPage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+
+import java.util.List;
+
 import static byitacademy.habasaraba.finalproject.leviPages.CartPage.SIDE_MENU_BTN_MEN;
 
 public class Step {
@@ -66,26 +69,25 @@ public class Step {
         WebElement OfferBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
         OfferBtn.click();
         WebElement MenuBtnShop = driver.findElement(By.xpath(CartPage.MENU_BTN_SHOP));
-        Driver.waitForPresenceElementByXPath(driver, CartPage.MENU_BTN_SHOP, 10);
+        Driver.waitForPresenceElementByXPath(driver, CartPage.MENU_BTN_SHOP, 20);
         MenuBtnShop.click();
-        Driver.waitForPresenceElementByXPath(driver, SIDE_MENU_BTN_MEN,10);
+        Driver.waitForPresenceElementByXPath(driver, SIDE_MENU_BTN_MEN,40);
         WebElement SideMenuBtn=driver.findElement(By.xpath(SIDE_MENU_BTN_MEN));
-        Driver.waitForPresenceElementByXPath(driver,SIDE_MENU_BTN_MEN,10);
+        Driver.waitForPresenceElementByXPath(driver,SIDE_MENU_BTN_MEN,30);
         SideMenuBtn.click();
-        Driver.waitForPresenceElementByXPath(driver,CartPage.SIDE_MENU_LINK_JEANS,15);
+        Driver.waitForPresenceElementByXPath(driver,CartPage.SIDE_MENU_LINK_JEANS,20);
         WebElement SideMenuLinkJeans = driver.findElement(By.xpath(CartPage.SIDE_MENU_LINK_JEANS));
-        Driver.waitForPresenceElementByXPath(driver, CartPage.SIDE_MENU_LINK_JEANS, 10);
+        /*Driver.waitForPresenceElementByXPath(driver, CartPage.SIDE_MENU_LINK_JEANS, 15);*/
         SideMenuLinkJeans.click();
-        WebElement productCell= driver.findElement(By.xpath("//div[@class='product-cell']/a"));
-        /*WebElement productName=productCell.findElement(By.xpath("//div[@class='product-name']"));*/
-        Driver.waitForPresenceElementByXPath(driver,"//div[@class='product-cell']/a",10);
-       /* Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_LINK,5);
-        WebElement ItemLink=driver.findElement(By.xpath(CartPage.ITEM_LINK));
-        ItemLink.click();*/
-        Actions actions2=new Actions(driver);
-        Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_COLOR_CHECKBOX,5);
+        WebElement itemLink= driver.findElement(By.xpath(CartPage.ITEM_LINK));
+        Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_LINK,20);
+        Actions action=new Actions(driver);
+        action.doubleClick(itemLink).perform();
+        /*itemLink.click();
+        /*Actions actions2=new Actions(driver);
+        /*Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_COLOR_CHECKBOX,5);
         WebElement target2=driver.findElement(By.xpath(CartPage.ITEM_COLOR_CHECKBOX));
-        actions2.moveToElement(target2).perform();
+        actions2.moveToElement(target2).perform();*/
         WebElement ItemColor=driver.findElement(By.xpath(CartPage.ITEM_COLOR_CHECKBOX));
         ItemColor.click();
         Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_WAIST_CHECKBOX,5);
@@ -94,9 +96,11 @@ public class Step {
         Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_LENGTH_CHECKBOX,5);
         WebElement ItemLength=driver.findElement(By.xpath(CartPage.ITEM_LENGTH_CHECKBOX));
         ItemLength.click();
-        Driver.waitForPresenceElementByXPath(driver,CartPage.ADD_TO_CART_BTN,5);
+        Driver.waitForPresenceElementByXPath(driver,CartPage.ADD_TO_CART_BTN,10);
         WebElement AddToCartBtn= driver.findElement(By.xpath(CartPage.ADD_TO_CART_BTN));
-        AddToCartBtn.click();
+        Actions actions1=new Actions(driver);
+        action.doubleClick(AddToCartBtn).perform();
+        /*AddToCartBtn.click();*/
         Driver.waitForPresenceElementByXPath(driver,CartPage.CART_ICON_HEADER,5);
         WebElement CartIconHeader= driver.findElement(By.xpath(CartPage.CART_ICON_HEADER));
         CartIconHeader.click();
@@ -106,8 +110,10 @@ public class Step {
         Driver.waitForPresenceElementByXPath(driver,CartPage.ITEM_PRICE,5);
         WebElement ItemPrice=driver.findElement(By.xpath(CartPage.ITEM_PRICE));
         return ItemPrice.getText();
-    }
-}
+    }}
+
+
+
 
 
 

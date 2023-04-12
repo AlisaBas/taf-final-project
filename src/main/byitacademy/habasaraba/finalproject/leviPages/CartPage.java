@@ -2,12 +2,12 @@ package byitacademy.habasaraba.finalproject.leviPages;
 
 public class CartPage {
     public static final String MENU_BTN_SHOP = "//button[text()='Shop']";
-    public static final String SIDE_MENU_BTN_MEN = "//button[text()='Men'and@id='l2Item2'and@data-v-14e3a8d6]";
-    public static final String SIDE_MENU_LINK_JEANS = "//a[text()='Jeans'and@id='l3Item2']";
+    public static final String SIDE_MENU_BTN_MEN = "//div[@class='nav-menu-panel__container lsco-col-md-9']//li";
+    public static final String SIDE_MENU_LINK_JEANS = "//div[@class='nav-l3__wrap lsco-row lsco-col-md-5 nav-menu-panel__l3--container']//a";
     public static final String ITEM_LINK = "//div[@class='product-cell']//a";
-    public static final String ITEM_COLOR_CHECKBOX = "//div[@class='swatches-container swatches-mweb-container']//img";
-    public static final String ITEM_WAIST_CHECKBOX = "//*[contains(@aria-label,'33 Waist')]";
-    public static final String ITEM_LENGTH_CHECKBOX = "//*[contains(@aria-label,'34 Length')]";
+    public static final String ITEM_COLOR_CHECKBOX = "//div[@class='swatches-container swatches-mweb-container']//li";
+    public static final String ITEM_WAIST_CHECKBOX = "//div[@class='waist-wrapper']//li";
+    public static final String ITEM_LENGTH_CHECKBOX = "//div[@class='length-wrapper']//li";
     public static final String ADD_TO_CART_BTN = "//button[@data-v-efc95fac]";
     public static final String CART_ICON_HEADER = "//a[@class='header-bar__cart']";
     public static final String ITEM_PRICE = "//span[text()='$68.60' and@data-v-1d95d56a]";
