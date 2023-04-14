@@ -1,6 +1,5 @@
 package byitacademy.habasaraba.finalproject.uitest;
 import byitacademy.habasaraba.finalproject.constants.ItemConstants;
-import byitacademy.habasaraba.finalproject.driver.Driver;
 import byitacademy.habasaraba.finalproject.pages.HomePage;
 import byitacademy.habasaraba.finalproject.pages.SearchPage;
 import byitacademy.habasaraba.finalproject.util.Util;
