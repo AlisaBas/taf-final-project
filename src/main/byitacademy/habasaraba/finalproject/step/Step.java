@@ -1,7 +1,6 @@
 package byitacademy.habasaraba.finalproject.step;
 import byitacademy.habasaraba.finalproject.util.Util;
 import byitacademy.habasaraba.finalproject.constants.UserConstants;
-import byitacademy.habasaraba.finalproject.driver.Driver;
 import byitacademy.habasaraba.finalproject.pages.CartPage;
 import byitacademy.habasaraba.finalproject.pages.HomePage;
 import byitacademy.habasaraba.finalproject.pages.LogInPage;
@@ -70,25 +69,25 @@ public class Step {
         Util.waitForPresenceElementByXPath(driver, CartPage.MENU_BTN_SHOP, 20);
         WebElement menuBtnShop = driver.findElement(By.xpath(CartPage.MENU_BTN_SHOP));
         Util.clickWithJS(driver, menuBtnShop);
-        Driver.waitForPresenceElementByXPath(driver, SIDE_MENU_BTN, 40);
+        Util.waitForPresenceElementByXPath(driver, SIDE_MENU_BTN, 40);
         WebElement sideMenuBtn = driver.findElement(By.xpath(SIDE_MENU_BTN));
         Util.clickWithJS(driver, sideMenuBtn);
-        Driver.waitForPresenceElementByXPath(driver, CartPage.SIDE_MENU_LINK, 20);
+        Util.waitForPresenceElementByXPath(driver, CartPage.SIDE_MENU_LINK, 20);
         WebElement sideMenuLink = driver.findElement(By.xpath(CartPage.SIDE_MENU_LINK));
         sideMenuLink.click();
-        Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_LINK, 20);
+        Util.waitForPresenceElementByXPath(driver, CartPage.ITEM_LINK, 20);
         WebElement itemLink = driver.findElement(By.xpath(CartPage.ITEM_LINK));
         Util.clickWithJS(driver, itemLink);
-        Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_COLOR_CHECKBOX, 20);
+        Util.waitForPresenceElementByXPath(driver, CartPage.ITEM_COLOR_CHECKBOX, 20);
         WebElement itemColor = driver.findElement(By.xpath(CartPage.ITEM_COLOR_CHECKBOX));
         Util.clickWithJS(driver, itemColor);
-        Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_WAIST_CHECKBOX, 5);
+        Util.waitForPresenceElementByXPath(driver, CartPage.ITEM_WAIST_CHECKBOX, 5);
         WebElement itemWaist = driver.findElement(By.xpath(CartPage.ITEM_WAIST_CHECKBOX));
         Util.clickWithJS(driver, itemWaist);
-        Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_LENGTH_CHECKBOX, 5);
+        Util.waitForPresenceElementByXPath(driver, CartPage.ITEM_LENGTH_CHECKBOX, 5);
         WebElement itemLength = driver.findElement(By.xpath(CartPage.ITEM_LENGTH_CHECKBOX));
         Util.clickWithJS(driver, itemLength);
-        Driver.waitForPresenceElementByXPath(driver, CartPage.ADD_TO_CART_BTN, 10);
+        Util.waitForPresenceElementByXPath(driver, CartPage.ADD_TO_CART_BTN, 10);
         WebElement addToCartBtn = driver.findElement(By.xpath(CartPage.ADD_TO_CART_BTN));
         Util.clickWithJS(driver, addToCartBtn);
         Util.waitForPresenceElementByXPath(driver, CartPage.CART_ICON_HEADER, 5);
@@ -98,9 +97,7 @@ public class Step {
 
     public String AddItemToCart() {
         addToCart();
-        Driver.waitForNoEmptyCart(driver,CartPage.ITEM_QUANTITY,10);
-        /*Util.waitFor(30);
-        /*Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_PRICE, 70);*/
+        Util.waitForNoEmptyCart(driver,CartPage.ITEM_QUANTITY,10);
         WebElement itemQuantity = driver.findElement(By.xpath(CartPage.ITEM_QUANTITY));
         return itemQuantity.getText();
     }

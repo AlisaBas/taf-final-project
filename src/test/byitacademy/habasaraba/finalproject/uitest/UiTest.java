@@ -1,9 +1,9 @@
 package byitacademy.habasaraba.finalproject.uitest;
-
 import byitacademy.habasaraba.finalproject.constants.ItemConstants;
 import byitacademy.habasaraba.finalproject.driver.Driver;
 import byitacademy.habasaraba.finalproject.pages.HomePage;
 import byitacademy.habasaraba.finalproject.pages.SearchPage;
+import byitacademy.habasaraba.finalproject.util.Util;
 import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -46,7 +46,7 @@ public class UiTest extends BaseTest {
 
     @Test
     public void searchTest() {
-        Driver.waitForPresenceElementByXPath(driver, HomePage.OFFER_BTN, 5);
+        Util.waitForPresenceElementByXPath(driver, HomePage.OFFER_BTN, 5);
         WebElement offerBtn = driver.findElement(By.xpath(HomePage.OFFER_BTN));
         offerBtn.click();
         WebElement searchInputField = driver.findElement(By.xpath(SearchPage.SEARCH_INPUT_FIELD));
