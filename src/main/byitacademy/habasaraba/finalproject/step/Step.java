@@ -98,7 +98,8 @@ public class Step {
 
     public String AddItemToCart() {
         addToCart();
-        Util.waitFor(30);
+        Driver.waitForNoEmptyCart(driver,CartPage.ITEM_QUANTITY,10);
+        /*Util.waitFor(30);
         /*Driver.waitForPresenceElementByXPath(driver, CartPage.ITEM_PRICE, 70);*/
         WebElement itemQuantity = driver.findElement(By.xpath(CartPage.ITEM_QUANTITY));
         return itemQuantity.getText();

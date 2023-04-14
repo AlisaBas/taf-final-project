@@ -1,4 +1,5 @@
 package byitacademy.habasaraba.finalproject.driver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +17,19 @@ public class Driver {
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(xPath)));
     }
 
-    public static void wait(WebDriver driver, String xpath, int seconds) {
-        Wait<WebDriver> wait = new FluentWait<>(driver)
+    public static void waitForNoEmptyCart(WebDriver driver, String xpath, int seconds) {
+        Wait<WebDriver> fluentWait = new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(seconds))
-                .pollingEvery(Duration.ofSeconds(5))
-                .ignoring(NoSuchElementException.class);
 
-        WebElement element = wait.until(driver1 -> driver1.findElement(By.xpath(xpath)));
+                .pollingEvery(Duration.ofSeconds(1)).ignoring(NoSuchElementException.class);
+
+        fluentWait.until(driver1 -> {
+            WebElement element = driver1.findElement(By.xpath(xpath));
+            return !element.getText().equals("0 items");
+        });
     }
 }
+
 
 
 
