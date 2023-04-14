@@ -1,4 +1,4 @@
-package byitacademy.habasaraba.finalproject.leviPages;
+package byitacademy.habasaraba.finalproject.pages;
 
 public class SearchPage {
     public static final String SEARCH_INPUT_FIELD = "//*[@id='searchInputHeader']";

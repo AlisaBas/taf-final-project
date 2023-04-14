@@ -1,6 +1,6 @@
-package byitacademy.habasaraba.finalproject;
-import byitacademy.habasaraba.finalproject.data.ApiTestData;
-import byitacademy.habasaraba.finalproject.data.UserData;
+package byitacademy.habasaraba.finalproject.apitest;
+import byitacademy.habasaraba.finalproject.constants.ApiTestConstants;
+import byitacademy.habasaraba.finalproject.constants.UserConstants;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ public class ApiTest {
                 contentType(ContentType.JSON).
                 accept(ContentType.JSON).
                 when().
-                post(ApiTestData.API_URL_SUBSCRIPTION).
+                post(ApiTestConstants.API_URL_SUBSCRIPTION).
                 then().log().body().
                 assertThat().statusCode(500);
     }
@@ -33,10 +33,10 @@ public class ApiTest {
                 .given().
                 contentType(ContentType.JSON).
                 accept(ContentType.JSON).
-                multiPart("email", UserData.EMAIL_INVALID).
-                multiPart("password", UserData.PASSWORD_INVALID);
+                multiPart("email", UserConstants.EMAIL_INVALID).
+                multiPart("password", UserConstants.PASSWORD_INVALID);
         when().
-                post(ApiTestData.API_URL_LOGIN).
+                post(ApiTestConstants.API_URL_LOGIN).
                 then().log().body().
                 assertThat().statusCode(403);
     }
